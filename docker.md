@@ -22,7 +22,7 @@ To remove container
 > docker container rm container_name|container_id
 
 To remove image
-> docker image rm image_name|image_id
+> docker image rm image_name:[tag]|image_id
 > docker rmi image_name|image_id
 
 To show container logs
@@ -30,3 +30,6 @@ To show container logs
 
 To show container stats (memory, cpu usage ..)
 > docker stats container_name|container_id
+
+To show image meta data
+> docker inspect image_name:[tag]|image_id
