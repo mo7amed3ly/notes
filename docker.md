@@ -51,4 +51,5 @@ To execute command on a container
 
 To Show the history of an image
 > docker history image_id|image_name
-> (e.g.) docker history redis
+(e.g.) 
+> docker history redis
