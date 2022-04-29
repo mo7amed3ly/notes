@@ -33,6 +33,7 @@ To show container stats (memory, cpu usage ..)
 
 To show low-level information on Docker objects (e.g IP Address)
 > docker inspect container_name|container_id
+> docker inspect image_name:[tag]|image_id
 
 To information about docker images and containers
 > docker info
