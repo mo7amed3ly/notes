@@ -7,8 +7,12 @@ To run docker image and pull it if not exist
 > docker run image_name:tag
 > docker run hello-world
 
-To run in dettached mode
+To run in detached mode
 > docker run -d image_name:tag
+
+To run and publish to port
+> docker run --detach|-d --publish|-p host_port:container_port --name|-n container_name image_name:tag
+> docker run -d -p 81:80 -n my_ngin nginx
  
 To list running [all] containers
 > docker container ls [-a]
@@ -37,3 +41,6 @@ To show low-level information on Docker objects (e.g IP Address)
 
 To information about docker images and containers
 > docker info
+
+To start/stop a container
+> docker start/stop container_id|container_name
