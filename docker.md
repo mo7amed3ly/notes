@@ -35,7 +35,7 @@ To show container logs
 To show container stats (memory, cpu usage ..)
 > docker stats container_name|container_id
 
-To show low-level information on Docker objects (e.g IP Address)
+To show low-level information on Docker objects (e.g IP Address, exposed ports)
 > docker inspect container_name|container_id
 > docker inspect image_name:[tag]|image_id
 
@@ -44,3 +44,7 @@ To information about docker images and containers
 
 To start/stop a container
 > docker start/stop container_id|container_name
+
+To execute command on a container
+> docker exec [options] container_id|container_name command
+> docker exec -it container_id|container_name bash
