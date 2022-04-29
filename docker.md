@@ -48,3 +48,7 @@ To start/stop a container
 To execute command on a container
 > docker exec [options] container_id|container_name command
 > docker exec -it container_id|container_name bash
+
+To Show the history of an image
+> docker history image_id|image_name
+> (e.g.) docker history redis
