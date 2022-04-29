@@ -53,3 +53,18 @@ To Show the history of an image
 > docker history image_id|image_name
 (e.g.) 
 > docker history redis
+
+To tag an image
+> docker tag image_id|image_name tag
+
+(e.g.)
+> docker tag nginx mo7amed3ly/myngin:dev
+
+To push image to dockerhub
+> docker login
+> username:
+> password:
+> docker push docker_image_tag
+> docker push mo7amed3ly/myngin:dev
+
+
