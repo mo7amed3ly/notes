@@ -67,4 +67,10 @@ To push image to dockerhub
 > docker push docker_image_tag
 > docker push mo7amed3ly/myngin:dev
 
-
+Dockerfile
+```
+FROM alpine
+CMD ["echo", "Hello world"]
+```
+To build docker image
+> docker build --tag image_tag .
