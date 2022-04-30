@@ -74,3 +74,18 @@ CMD ["echo", "Hello world"]
 ```
 To build docker image
 > docker build --tag image_tag .
+
+## Dockerfile for dotnet v6.0 web application
+```dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /source
+COPY *.csproj .
+RUN dotnet restore
+COPY . .
+RUN dotnet publish -c release -o /app
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY --from=build /app .
+ENTRYPOINT [ "dotnet", "hrapp.dll" ]
+```
