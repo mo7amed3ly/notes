@@ -112,3 +112,11 @@ To bound nginx html to a directory in the host
 ```bash
 docker run -d -p 8081:80 -v ${pwd}/dash:/usr/share/nginx/html nginx
 ```
+### Create Volume
+```bash
+docker volume create vol-name
+```
+### Run MariaDb with volume
+```bash
+ docker run -d -v vol-name:/var/lib/mysql -e MARIADB_ROOT_PASSWORD=1234 mariadb
+ ```
