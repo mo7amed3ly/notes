@@ -89,3 +89,21 @@ WORKDIR /app
 COPY --from=build /app .
 ENTRYPOINT [ "dotnet", "hrapp.dll" ]
 ```
+## Dockerfile for node app
+### Pre-requists
+- install node
+- install angular/cli (> ```npm install @angular/cli```)
+- create angular app (> ```ng new helpdesk```)
+
+```dockerfile
+FROM node:lts-alpine3.15 AS build
+RUN mkdir /app
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+RUN npm run build --prod
+
+FROM nginx:alpine
+COPY --from=build /app/dist/helpdesk /usr/share/nginx/html
+```
