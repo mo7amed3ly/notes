@@ -120,3 +120,17 @@ docker volume create vol-name
 ```bash
  docker run -d -v vol-name:/var/lib/mysql -e MARIADB_ROOT_PASSWORD=1234 mariadb
  ```
+ # Docker Networking
+ ### List Networks
+ ```bash
+ docker network ls
+ ```
+ ### Inspect Network
+ ```bash
+ docker network inspect network_id|network_name
+ ```
+ ### Create Network
+ ```bash
+ docker network create --driver bridge network_name
+ docker network create --driver bridge n1
+ ```
