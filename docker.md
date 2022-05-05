@@ -131,6 +131,18 @@ docker volume create vol-name
  ```
  ### Create Network
  ```bash
- docker network create --driver bridge network_name
- docker network create --driver bridge n1
+ docker network create --driver bridge --subnet x.x.x.x/x network_name
+ docker network create --driver bridge --subnet 172.25.0.0/16 n1 
  ```
+### Run container in network
+```bash
+docker run --network=n1 -d -it --name=inst1 alpine
+```
+### Disconnect container from network
+```bash
+docker network disconnect n1 inst1
+```
+### Connect container to network
+```bash
+docker network disconnect n2 inst1
+```
