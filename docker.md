@@ -146,3 +146,45 @@ docker network disconnect n1 inst1
 ```bash
 docker network disconnect n2 inst1
 ```
+## Docker Compose
+### Create docker-compose.yml file
+```yaml
+version: "3"
+services:
+    mysql_database:
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_DATABASE: wp_db
+            MYSQL_USER: wp_user
+            MYSQL_PASSWORD: 1234
+        volumes:
+            - mysql:/var/lib/mysql
+    wordpress:
+        depends_on: 
+            - mysql
+        image: wordpress
+        restart: always
+        ports:
+            - "8000:80"
+        environment:
+            WORDPRESS_DB_HOST: mysql_database:3306
+            WORDPRESS_DB_USER: wp_user
+            WORDPRESS_DB_PASSWORD: 1234
+            WORDPRESS_DB_NAME: wp_db
+        volumes:
+            - "./:/var/www/html"
+    phpmyadmin:
+        depends_on: 
+            - mysql_database
+        image: phpmyadmin/phpmyadmin
+        restart: always
+        ports:
+            - "8080:80"
+        environment:
+            PMA_HOST: mysql_database
+            MYSQL_ROOT_PASSWORD: 1234
+volumes:
+    mysql: {}
+```
