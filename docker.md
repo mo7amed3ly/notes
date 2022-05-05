@@ -188,3 +188,11 @@ services:
 volumes:
     mysql: {}
 ```
+### Run docker compose
+```bash
+docker compose up -d
+```
+### Stop docker compose
+```bash
+docker compose down
+```
