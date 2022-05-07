@@ -172,12 +172,13 @@ If you can't access the NodePort service webapp with `MinikubeIP:NodePort`, exec
     minikube service webapp-service
 
 <br />
+
 ## Fix the issue with port forwarding
     kubectl port-forward svc/webapp-service 3000:3000
 ## Fix the issue using HyperV
 The issue can be resolved by changing minikube base driver to hyperv from docker.
 
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 Your pc will restart after that you can say
 
 minikube config set driver hyperv
