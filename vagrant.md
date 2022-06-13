@@ -27,6 +27,8 @@ $ vagrant destroy
 
 
 ## Change memory specs
+Updte config.vm.provider section in Vagrantfile to be:
+
 ```ruby
   config.vm.provider "virtualbox" do |vb
     
