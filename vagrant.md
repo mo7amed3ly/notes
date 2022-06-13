@@ -6,7 +6,17 @@ To download and install vagrant check this link [https://www.vagrantup.com/downl
 
 To find a suitable vagrant box check this link [https://app.vagrantup.com/boxes/search](https://app.vagrantup.com/boxes/search)
 
-## To init and start vagrant file
+## To init and start/stop vagrant file
 $ vagrant init ubuntu/trusty64
 
 $ vagrant up
+
+## Suspend and resume vagrant box
+$ vagrant suspend
+
+$vagrant resume
+
+## To stop and destroy vagrant box
+$ vagrant stop
+
+$ vagrant destroy
