@@ -16,6 +16,10 @@ $ vagrant suspend
 
 $vagrant resume
 
+## To restart vagrant box
+$ vagrant reload
+
+
 ## To stop and destroy vagrant box
 $ vagrant stop
 
