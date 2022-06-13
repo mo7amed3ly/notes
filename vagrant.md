@@ -24,3 +24,13 @@ $ vagrant reload
 $ vagrant stop
 
 $ vagrant destroy
+
+
+## Change memory specs
+```ruby
+  config.vm.provider "virtualbox" do |vb
+    
+    # Customize the amount of memory on the VM:
+    vb.memory = "1024"
+  end
+```
