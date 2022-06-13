@@ -8,4 +8,5 @@ To find a suitable vagrant box check this link [https://app.vagrantup.com/boxes/
 
 ## To init and start vagrant file
 $ vagrant init ubuntu/trusty64
+
 $ vagrant up
