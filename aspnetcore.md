@@ -34,3 +34,7 @@ builder.Services.AddDbContext<DataContext>(
 ```
 dotnet ef migrations add Initial -o data\Migrations
 ```
+- create database
+```
+dotnet ef database update
+```
