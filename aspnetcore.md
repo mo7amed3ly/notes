@@ -30,3 +30,7 @@ builder.Services.AddDbContext<DataContext>(
     }
     );
 ```
+- add database migration
+```
+dotnet ef migrations add Initial -o data\Migrations
+```
