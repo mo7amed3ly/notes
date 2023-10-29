@@ -38,3 +38,6 @@ dotnet ef migrations add Initial -o data\Migrations
 ```
 dotnet ef database update
 ```
+- view sqlite database 
+  - install vs code ext sqlite
+  - command palette sqlite view database
