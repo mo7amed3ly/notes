@@ -20,7 +20,7 @@
     public DataContext(options):DbContext(options){}
     prop List<AppUser> Users;
     }
-    ```
+```
 - inject db context
 ```
 builder.Services.AddDbContext<DataContext>(
