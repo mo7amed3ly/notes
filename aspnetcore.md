@@ -1,4 +1,4 @@
-#ASP.NET Core
+# ASP.NET Core
 - install dotnet sdk
 - create application
   - dotnet new webapi -n API
@@ -41,3 +41,30 @@ dotnet ef database update
 - view sqlite database 
   - install vs code ext sqlite
   - command palette sqlite view database
+- create controller to access AppUser apis
+```csharp
+[ApiController]
+[Route("api/[controller]")]
+public class UsersController : ControllerBase
+{
+    private readonly DataContext _context;
+
+    public UsersController(DataContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public ActionResult<IEnumerable<AppUser>> Get() 
+    { 
+        return _context.Users;
+    
+    }
+
+    [HttpGet("{id}")]
+    public ActionResult<AppUser> GetUser(int id)
+    {
+        return _context.Users.Find(id);
+    }
+}
+```
