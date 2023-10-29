@@ -4,3 +4,8 @@
   - dotnet new webapi -n API
   - dotnet new sln
   - dotnet sln add API\API.csproj
+- add nuget packages for entityframework and sqllite:
+  - Microsoft.EntityFrameworkCore.Sqlite
+  - Microsoft.EntityFrameworkCore.Design
+- install dotnet ef tool globally
+  - dotnet tool install --global dotnet-ef --version 7.0.13
